@@ -1,0 +1,123 @@
+@baseUrl = http://localhost:8080
+
+### Cadastrar aluno
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome" : "João da Silva",
+  "dataNascimento": "1995-08-15",
+  "sexo": "M",
+  "telefone": "4833334444",
+  "celular": "48991645543",
+  "email": "joao@email.com",
+  "observacao": "Aluno iniciante",
+  "endereco": "Rua das Flores",
+  "numero": "123",
+  "complemento": "Apartamento 202",
+  "bairro": "Centro",
+  "cidade": "Criciúma",
+  "estado": "SC",
+  "cep": "88802410"
+}
+
+### Listar Alunos
+GET {{baseUrl}}/alunos
+
+### Listar alunos com paginação
+GET {{baseUrl}}/alunos?page=0&size=10&sort=nome,asc
+
+### Buscar aluno por ID
+GET {{baseUrl}}/alunos/1
+
+### Atualizar aluno
+PUT {{baseUrl}}/alunos/1
+Content-Type: application/json
+
+{
+  "nome" : "João da Silva Atualizado",
+  "dataNascimento": "1995-08-15",
+  "sexo": "M",
+  "telefone": "4833334444",
+  "celular": "48991645543",
+  "email": "joao@email.com",
+  "observacao": "Aluno iniciante",
+  "endereco": "Rua das Flores",
+  "numero": "123",
+  "complemento": "Apartamento 202",
+  "bairro": "Centro",
+  "cidade": "Criciúma",
+  "estado": "SC",
+  "cep": "88802410"
+}
+
+### Excluir aluno
+DELETE {{baseUrl}}/alunos/1
+
+### Cadastrar aluno
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome" : "Vanessa Oliveira",
+  "dataNascimento": "1998-03-22",
+  "sexo": "F",
+  "telefone": "4833334444",
+  "celular": "48991645543",
+  "email": "vanessa@email.com",
+  "observacao": "Aluna Ja possui boa avaliacao",
+  "endereco": "Rua das Flores",
+  "numero": "123",
+  "complemento": "Apartamento 202",
+  "bairro": "Centro",
+  "cidade": "Criciúma",
+  "estado": "SC",
+  "cep": "88802410"
+}
+
+### Cadastrar um aluno inválido
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome" : "",
+  "dataNascimento": "1998-03-22",
+  "sexo": "Masculino",
+  "email": "email-invalido",
+  "estado": "Santa Catarina"
+}
+
+### Listar todos
+GET {{baseUrl}}/alunos?page=0&size=10&sort=nome,asc
+
+### Listar por nome
+GET {{baseUrl}}/alunos?nome=joao&page=0&size=10&sort=nome,asc
+
+### Listar por cidade
+GET {{baseUrl}}/alunos?cidade=Criciúma&page=0&size=10&sort=nome,asc
+
+### Listar por cidade
+GET {{baseUrl}}/alunos?estado=SC&page=0&size=10&sort=nome,asc
+
+### Listar por email
+GET {{baseUrl}}/alunos?email=joao@email.com&page=0&size=10&sort=nome,asc
+
+
+### Faturamento mensal
+GET {{baseUrl}}/relatorios/faturamento-mensal
+
+### Alunos por cidade
+GET {{baseUrl}}/relatorios/alunos-por-cidade
+
+### Faturas em aberto
+GET {{baseUrl}}/relatorios/faturas-em-aberto
+
+
+
+
+
+
+
+
+
+
